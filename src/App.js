@@ -34,13 +34,13 @@ class App extends React.Component {
         </header>
         <hr className="w-8/12 border-t-2 border-t-indigo-900 mt-14 mb-14" />
         <Tab.Group>
-          <Tab.List className="flex p-1 space-x-1 bg-indigo-200 rounded-xl">
+          <Tab.List className="flex p-1 space-x-1 bg-indigo-200 rounded-xl w-9/12">
             {Object.keys(items).map((category, i) => (
               <Tab
                 key={i}
                 className={({ selected }) =>
                   classNames(
-                    "w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg",
+                    "w-full py-2.5 px-1 text-sm leading-5 font-medium text-blue-700 rounded-lg",
                     "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60",
                     selected
                       ? "bg-white shadow"
@@ -52,7 +52,7 @@ class App extends React.Component {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels>
+          <Tab.Panels className="mt-10">
             {Object.keys(items).map((category, i) => (
               <Tab.Panel key={i}>
                 <ItemsList itemType={category} itemsList={this.state.items} />
